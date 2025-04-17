@@ -11,7 +11,7 @@ import { gestioneRischioContent } from './content/gestioneRischio.js';
 export const contentLibrary = {
     'mentalita-trader': mentalitaTraderContent,
     'analisi-tecnica-murphy': analisiTecnicaMurphyContent,
-    'placeholder-2': gestioneRischioContent // Manteniamo placeholder-2 per ora, punta al contenuto di gestione rischio
+    'gestione-rischio': gestioneRischioContent // Manteniamo placeholder-2 per ora, punta al contenuto di gestione rischio
     // Aggiungi qui altre chiavi e contenuti importati quando creeremo nuove pagine
     // Esempio:
     // 'elliott-wave': elliottWaveContent,
