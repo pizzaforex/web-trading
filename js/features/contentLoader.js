@@ -1,5 +1,5 @@
 // js/features/contentLoader.js
-import { contentLibrary } from '../config/content.js';
+import { contentLibrary } from '../config/contentLibrary.js';
 import { handleChallengeClick } from './challenges.js';
 import { hasAchievement } from './wallet.js'; // Per verificare se le challenge sono completate al render
 
