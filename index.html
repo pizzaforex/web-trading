@@ -37,7 +37,9 @@
     <nav id="main-nav">
         <ul>
             <li><a href="#" class="nav-link active" data-content-key="trading-zone">Trading in the Zone</a></li>
-            <li><a href="#" class="nav-link" data-content-key="placeholder-1">Analisi Tecnica (Placeholder)</a></li>
+            <!-- === MODIFICA QUI === -->
+            <li><a href="#" class="nav-link" data-content-key="analisi-tecnica-murphy">Analisi Tecnica (Murphy)</a></li>
+            <!-- === FINE MODIFICA === -->
             <li><a href="#" class="nav-link" data-content-key="placeholder-2">Gestione Rischio (Placeholder)</a></li>
         </ul>
     </nav>
@@ -53,11 +55,11 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Trading Mindset Academy. Ispirato da "Trading in the Zone" di Mark Douglas.</p>
+        <p>&copy; 2024 Trading Mindset Academy. Ispirato da "Trading in the Zone" di Mark Douglas e "Analisi Tecnica" di J. Murphy.</p>
         <p>Disclaimer: Il trading comporta rischi significativi. Questo sito è solo a scopo didattico.</p>
     </footer>
 
-    <!-- Modals HTML (Login, Signup, Wallet) -->
+    <!-- Modals HTML (Login, Signup, Wallet) (Nessuna Modifica Necessaria Qui) -->
     <!-- Login Modal -->
     <div id="loginModal" class="modal"> <div class="modal-content"> <span class="close-modal" data-modal-id="loginModal">&times;</span> <h2 class="modal-title">Accedi</h2> <form id="login-form"> <div class="form-group"> <label for="login-email">Email</label> <input type="email" id="login-email" required> </div> <div class="form-group"> <label for="login-password">Password</label> <input type="password" id="login-password" required> </div> <button type="submit" class="form-button primary-button">Accedi</button> <div class="form-footer"> Non hai un account? <a href="#" class="switch-modal" data-from="loginModal" data-to="signupModal">Registrati</a> </div> </form> </div> </div>
     <!-- Signup Modal -->
@@ -71,7 +73,6 @@
     </div>
 
     <!-- Collegamento al file JavaScript PRINCIPALE (ENTRY POINT) -->
-    <!-- !!! type="module" è FONDAMENTALE per usare import/export !!! -->
     <script type="module" src="js/main.js"></script>
 </body>
 </html>
