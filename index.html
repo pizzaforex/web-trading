@@ -36,11 +36,9 @@
     <!-- Barra di Navigazione -->
     <nav id="main-nav">
         <ul>
-            <li><a href="#" class="nav-link active" data-content-key="mentalita-trader">Mentalità del Trader</a></li>
-            <!-- === MODIFICA QUI === -->
-            <li><a href="#" class="nav-link" data-content-key="analisi-tecnica-murphy">Analisi Tecnica</a></li>
-            <!-- === FINE MODIFICA === -->
-            <li><a href="#" class="nav-link" data-content-key="placeholder-2">La Gestione Rischio</a></li>
+            <li><a href="#" class="nav-link" data-content-key="mentalita-trader">Mentalità del Trader</a></li>
+            <li><a href="#" class="nav-link" data-content-key="analisi-tecnica-murphy">Analisi Tecnica (Murphy)</a></li>
+            <li><a href="#" class="nav-link" data-content-key="gestione-rischio">Gestione Rischio & MM</a></li>
         </ul>
     </nav>
 
@@ -55,17 +53,87 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Trading Mindset Academy. Contenuti ispirati da concetti fondamentali di psicologia del trading e analisi tecnica dalle migliori fonti. </p>
+        <p>© 2024 Trading Mindset Academy. Contenuti ispirati da concetti fondamentali di psicologia del trading e analisi tecnica (J. Murphy).</p>
         <p>Disclaimer: Il trading comporta rischi significativi. Questo sito è solo a scopo didattico.</p>
     </footer>
 
-    <!-- Modals HTML (Login, Signup, Wallet) (Nessuna Modifica Necessaria Qui) -->
+    <!-- Modals HTML (Login, Signup, Wallet) -->
     <!-- Login Modal -->
-    <div id="loginModal" class="modal"> <div class="modal-content"> <span class="close-modal" data-modal-id="loginModal">&times;</span> <h2 class="modal-title">Accedi</h2> <form id="login-form"> <div class="form-group"> <label for="login-email">Email</label> <input type="email" id="login-email" required> </div> <div class="form-group"> <label for="login-password">Password</label> <input type="password" id="login-password" required> </div> <button type="submit" class="form-button primary-button">Accedi</button> <div class="form-footer"> Non hai un account? <a href="#" class="switch-modal" data-from="loginModal" data-to="signupModal">Registrati</a> </div> </form> </div> </div>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" data-modal-id="loginModal">×</span>
+            <h2 class="modal-title">Accedi</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="form-button primary-button">Accedi</button>
+                <div class="form-footer"> Non hai un account? <a href="#" class="switch-modal" data-from="loginModal" data-to="signupModal">Registrati</a> </div>
+            </form>
+        </div>
+    </div>
     <!-- Signup Modal -->
-    <div id="signupModal" class="modal"> <div class="modal-content"> <span class="close-modal" data-modal-id="signupModal">&times;</span> <h2 class="modal-title">Registrati</h2> <form id="signup-form"> <div class="form-group"> <label for="signup-name">Nome</label> <input type="text" id="signup-name" required> </div> <div class="form-group"> <label for="signup-email">Email</label> <input type="email" id="signup-email" required> </div> <div class="form-group"> <label for="signup-password">Password</label> <input type="password" id="signup-password" required> </div> <div class="form-group"> <label for="signup-confirm">Conferma Password</label> <input type="password" id="signup-confirm" required> </div> <button type="submit" class="form-button primary-button">Crea Account</button> <div class="form-footer"> Hai già un account? <a href="#" class="switch-modal" data-from="signupModal" data-to="loginModal">Accedi</a> </div> </form> </div> </div>
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" data-modal-id="signupModal">×</span>
+            <h2 class="modal-title">Registrati</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Nome</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm">Conferma Password</label>
+                    <input type="password" id="signup-confirm" required>
+                </div>
+                <button type="submit" class="form-button primary-button">Crea Account</button>
+                <div class="form-footer"> Hai già un account? <a href="#" class="switch-modal" data-from="signupModal" data-to="loginModal">Accedi</a> </div>
+            </form>
+        </div>
+    </div>
     <!-- Wallet Modal -->
-    <div id="walletModal" class="modal"> <div class="modal-content"> <span class="close-modal" data-modal-id="walletModal">&times;</span> <h2 class="modal-title">Il Tuo Wallet TRAD</h2> <div id="wallet-connected-content" style="display: none;"> <div class="token-amount"> <i class="fas fa-coins"></i> <span id="wallet-token-count">0</span> </div> <div class="token-name">TRAD Token</div> <div class="wallet-info"> <p><strong>Indirizzo Wallet Collegato:</strong></p> <div class="wallet-address" id="wallet-address"></div> </div> <div class="wallet-achievements"> <h3><i class="fas fa-trophy"></i> Achievements</h3> <div id="achievements-list"> <div class="no-achievements">Nessun achievement sbloccato.</div> </div> </div> <button id="disconnect-wallet-btn" class="form-button danger-button" style="margin-top: 20px;">Disconnetti Wallet</button> </div> <div id="wallet-connect-content"> <p class="modal-description">Collega il tuo wallet per guadagnare e conservare i token TRAD.</p> <i class="fas fa-wallet modal-icon icon-success"></i> <button id="connect-wallet-btn" class="form-button success-button">Collega Wallet</button> <p class="modal-info-text">I token TRAD sbloccano contenuti e strumenti avanzati.</p> </div> </div> </div>
+    <div id="walletModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" data-modal-id="walletModal">×</span>
+            <h2 class="modal-title">Il Tuo Wallet TRAD</h2>
+            <div id="wallet-connected-content" style="display: none;">
+                <div class="token-amount">
+                    <i class="fas fa-coins"></i> <span id="wallet-token-count">0</span>
+                </div>
+                <div class="token-name">TRAD Token</div>
+                <div class="wallet-info">
+                    <p><strong>Indirizzo Wallet Collegato:</strong></p>
+                    <div class="wallet-address" id="wallet-address"></div>
+                </div>
+                <div class="wallet-achievements">
+                    <h3><i class="fas fa-trophy"></i> Achievements</h3>
+                    <div id="achievements-list">
+                        <div class="no-achievements">Nessun achievement sbloccato.</div>
+                    </div>
+                </div>
+                <button id="disconnect-wallet-btn" class="form-button danger-button" style="margin-top: 20px;">Disconnetti Wallet</button>
+            </div>
+            <div id="wallet-connect-content">
+                <p class="modal-description">Collega il tuo wallet per guadagnare e conservare i token TRAD.</p>
+                <i class="fas fa-wallet modal-icon icon-success"></i>
+                <button id="connect-wallet-btn" class="form-button success-button">Collega Wallet</button>
+                <p class="modal-info-text">I token TRAD sbloccano contenuti e strumenti avanzati.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Notification Area -->
     <div id="notification-area">
