@@ -1,0 +1,51 @@
+.card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 1rem;
+}
+.flex-item {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Specific Card variations */
+.consistency-principles {
+    background-color: #eef2f7;
+    border-left: 5px solid var(--success-color);
+}
+.resources {
+    background-color: #f0f7ff;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    border: 1px solid #cce5ff;
+}
+.resources h4 { color: var(--secondary-color); margin-top: 0; display: flex; align-items: center; }
+.resources h4 i { margin-right: 8px; }
+.resources ul { list-style: none; padding: 0; margin: 0.5rem 0 0 0; }
+.resources li { margin-bottom: 0.7rem; }
+.resources li i { margin-right: 8px; color: var(--secondary-color); }
+
+.mental-pitfalls {
+    background-color: #fff8e1;
+    border-left: 4px solid var(--accent-color);
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+.mental-pitfalls h4 { color: #e65100; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; display: flex; align-items: center; }
+.mental-pitfalls h4 i { margin-right: 8px; }
+
+/* Responsive Cards */
+@media (max-width: 768px) {
+    .card { padding: 1.5rem; }
+}

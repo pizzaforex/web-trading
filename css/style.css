@@ -1,0 +1,21 @@
+/* --- CSS Main Entry Point --- */
+/* Import order matters for the cascade */
+
+/* 1. Base styles, variables, resets */
+@import url('base.css');
+
+/* 2. Layout structure */
+@import url('layout.css');
+
+/* 3. Components */
+@import url('components/buttons.css');
+@import url('components/cards.css');
+@import url('components/modals.css');
+@import url('components/notifications.css');
+@import url('components/challenges.css'); /* Include styles specific to challenges */
+
+/* 4. Utilities (if any) */
+/* @import url('utilities.css'); */
+
+/* Specific overrides or minor adjustments can go here if absolutely necessary, */
+/* but prefer adding to the specific partial files above. */

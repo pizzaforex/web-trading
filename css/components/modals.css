@@ -1,0 +1,79 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    overflow: auto;
+    animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 8% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    position: relative;
+    animation: scaleUp 0.3s ease;
+}
+@keyframes scaleUp { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+    line-height: 1;
+    transition: color 0.2s;
+}
+.close-modal:hover { color: var(--dark-text); }
+
+.modal-title {
+    text-align: center;
+    border-bottom: none;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
+/* Form elements within modals */
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; margin-bottom: 6px; font-weight: 600; color: var(--dark-text); font-size: 0.95rem; }
+.form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; box-sizing: border-box; font-size: 1rem; }
+.form-footer { text-align: center; margin-top: 20px; font-size: 0.9rem; color: var(--grey-text); }
+.form-footer a { color: var(--secondary-color); font-weight: 600; }
+
+/* Wallet Modal Specific */
+#wallet-connect-content .modal-description { text-align: center; margin-bottom: 1.5rem; color: var(--grey-text); }
+#wallet-connect-content .modal-icon { font-size: 3.5rem; display: block; text-align: center; margin-bottom: 1.5rem; }
+#wallet-connect-content .modal-info-text { font-size: 0.85rem; color: var(--grey-text); text-align: center; margin-top: 1rem; }
+.wallet-address { background-color: #f1f3f5; padding: 12px; border-radius: 5px; margin: 8px 0 15px 0; font-family: monospace; word-break: break-all; font-size: 0.9rem; border: 1px dashed var(--border-color); text-align: center;}
+.token-amount { font-size: 2.5rem; font-weight: bold; color: var(--success-color); display: flex; align-items: center; justify-content: center; margin: 15px 0 5px 0; }
+.token-amount i { color: #FFD700; margin-right: 10px; font-size: 2rem;}
+.token-name { color: var(--grey-text); font-size: 1.1rem; text-align: center; margin-bottom: 25px;}
+.wallet-achievements { margin-top: 25px; border-top: 1px solid var(--border-color); padding-top: 20px;}
+.wallet-achievements h3 { font-size: 1.2rem; color: var(--primary-color); margin-bottom: 15px; display: flex; align-items: center;}
+.wallet-achievements h3 i { margin-right: 8px; color: gold; }
+.achievement { display: flex; justify-content: space-between; align-items: center; padding: 10px 5px; border-bottom: 1px dashed #eee; font-size: 0.95rem;}
+.achievement:last-child { border-bottom: none; }
+.achievement-name { font-weight: 600; color: var(--dark-text); display: flex; align-items: center;}
+.achievement-name i { margin-right: 8px; }
+.achievement-tokens { color: var(--success-color); font-weight: bold; display: flex; align-items: center; }
+.achievement-tokens i { color: #FFD700; margin-right: 4px; }
+.no-achievements { color: var(--grey-text); font-style: italic; text-align: center; padding: 15px 0; }
+
+/* Responsive Modals */
+@media (max-width: 768px) {
+    .modal-content { width: 95%; margin: 5% auto;}
+}

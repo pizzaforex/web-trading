@@ -1,0 +1,107 @@
+/* Variabili CSS */
+:root {
+    --primary-color: #0a2e4d; /* Blu scuro */
+    --secondary-color: #1a6ca8; /* Blu medio */
+    --accent-color: #ff9800; /* Arancione */
+    --success-color: #4CAF50; /* Verde */
+    --danger-color: #f44336; /* Rosso */
+    --light-bg: #f8f9fa; /* Sfondo leggermente grigio */
+    --card-bg: #ffffff; /* Sfondo card */
+    --dark-text: #333333;
+    --light-text: #ffffff;
+    --grey-text: #6c757d; /* Grigio per testo secondario */
+    --border-color: #dee2e6; /* Colore bordi */
+    --header-height: 60px; /* Altezza toolbar */
+    --nav-height: 45px; /* Altezza nav */
+}
+
+/* Reset Base & Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + var(--nav-height) + 20px);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    line-height: 1.7;
+    color: var(--dark-text);
+    background-color: var(--light-bg);
+    position: relative;
+}
+
+/* --- Sfondo Parallax (Opzionale) --- */
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 800"><g fill="none" stroke="%230a2e4d" stroke-width=".3"><path d="M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63"/><path d="M-31 229L237 261 390 382 731 737M520 660L309 538 295 764 40 599 309 538 390 382 102 382 40 599 -69 737 127 880"/><path d="M520 660L731 737 390 382 520 660 309 538 40 599 -69 737 520 660 295 764 390 382 309 538"/></g></svg>');
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.05;
+    background-attachment: fixed;
+}
+
+/* --- Layout Contenitore --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Tipografia --- */
+h1, h2, h3 {
+    line-height: 1.3;
+}
+h1 { margin-bottom: 0.5rem; font-size: 2.8rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+h2 { color: var(--primary-color); border-bottom: 3px solid var(--secondary-color); padding-bottom: 0.6rem; margin-top: 3rem; margin-bottom: 1.8rem; font-size: 2rem; display: flex; align-items: center; }
+h2:first-of-type { margin-top: 0; }
+h2 i { margin-right: 12px; color: var(--secondary-color); font-size: 1.8rem; }
+h3 { color: var(--secondary-color); font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
+h4 { font-size: 1.15rem; margin-bottom: 0.8rem; color: var(--primary-color); }
+p { margin-bottom: 1.2rem; }
+ul, ol { margin-bottom: 1.2rem; padding-left: 25px; }
+li { margin-bottom: 0.5rem; }
+a { color: var(--secondary-color); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--primary-color); text-decoration: underline; }
+code, .concept { background-color: #e9ecef; padding: 3px 7px; border-radius: 4px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; color: var(--secondary-color); font-size: 0.95em; }
+
+/* --- Loading Placeholder --- */
+.loading-placeholder {
+    text-align: center;
+    padding: 5rem 0;
+    color: var(--grey-text);
+}
+.loading-placeholder i {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* --- Icon Helpers --- */
+.icon-danger { color: var(--danger-color); }
+.icon-success { color: var(--success-color); }
+.icon-secondary { color: var(--secondary-color); }
+.icon-accent { color: var(--accent-color); }
+
+/* --- Responsive Base (Media query structure) --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.7rem; margin-top: 2.5rem;}
+    h2 i { font-size: 1.5rem; }
+    .container { padding: 1rem; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.3rem; }
+}

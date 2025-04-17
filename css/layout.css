@@ -1,0 +1,99 @@
+/* --- Toolbar (<header> tag) --- */
+header.toolbar {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 0 20px;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.toolbar-left { display: flex; align-items: center; }
+.toolbar-logo {
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.toolbar-logo img {
+    display: block;
+    max-height: calc(var(--header-height) - 20px);
+    width: auto;
+    vertical-align: middle;
+}
+.login-tools { display: flex; align-items: center; gap: 10px; }
+.token-balance { background-color: rgba(255, 255, 255, 0.1); border-radius: 4px; padding: 6px 12px; font-weight: bold; font-size: 0.9rem; display: none; align-items: center; }
+.token-icon { color: #FFD700; margin-right: 5px; }
+#user-info { display: none; align-items: center; color: var(--light-text); font-weight: 600;}
+#username-display { margin-right: 15px; }
+
+/* --- Barra Navigazione (<nav> tag) --- */
+nav {
+    background-color: #ffffff;
+    padding: 0 20px;
+    height: var(--nav-height);
+    position: sticky;
+    top: var(--header-height);
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+}
+nav ul { list-style: none; padding: 0; margin: 0; display: flex; align-items: center; height: 100%; gap: 5px; }
+nav ul li a { text-decoration: none; color: var(--secondary-color); font-weight: 600; padding: 10px 15px; border-radius: 4px; transition: background-color 0.2s, color 0.2s; font-size: 0.95rem; display: block; line-height: calc(var(--nav-height) - 20px); }
+nav ul li a:hover, nav ul li a.active { background-color: var(--secondary-color); color: var(--light-text); }
+
+/* --- Sezioni Principali (generati dinamicamente <section> tag) --- */
+main.container section {
+    padding: 0rem 0 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+main.container section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 1rem;
+}
+
+/* --- Header (Banner) - Se usato dinamicamente --- */
+header.banner {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--light-text);
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+header.banner::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 800"><g fill="none" stroke="%23ffffff" stroke-width=".5" opacity="0.08"><path d="M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63"/><path d="M-31 229L237 261 390 382 731 737M520 660L309 538 295 764 40 599 309 538 390 382 102 382 40 599 -69 737 127 880"/><path d="M520 660L731 737 390 382 520 660 309 538 40 599 -69 737 520 660 295 764 390 382 309 538"/></g></svg>');
+    background-position: center;
+}
+header.banner p { font-size: 1.15rem; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto;}
+
+
+/* --- Footer --- */
+footer { background-color: var(--primary-color); color: #bdc3c7; text-align: center; padding: 2rem 1rem; margin-top: 3rem; position: relative; z-index: 1; font-size: 0.9rem; }
+footer p { margin-bottom: 0.5rem; }
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+    nav ul { justify-content: center; overflow-x: auto; gap: 5px; }
+    nav ul li a { padding: 6px 10px; font-size: 0.9rem; }
+    .toolbar-logo { margin-right: 15px; }
+    .login-tools { gap: 5px; }
+    #username-display { margin-right: 8px;}
+}
+
+@media (max-width: 480px) {
+    nav ul li a { padding: 5px 8px; font-size: 0.85rem; }
+    .token-balance { display: none !important; }
+    .login-tools { flex-wrap: wrap; justify-content: flex-end; }
+    .toolbar-left { flex-grow: 1; }
+}

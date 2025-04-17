@@ -1,0 +1,90 @@
+/* --- Toolbar Buttons --- */
+.login-button, .signup-button, .wallet-button, #logout-btn {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+.login-button { background-color: transparent; color: var(--light-text); border: 1px solid var(--light-text); }
+.login-button:hover { background-color: rgba(255, 255, 255, 0.1); }
+.signup-button { background-color: var(--accent-color); color: var(--light-text); border: 1px solid var(--accent-color); }
+.signup-button:hover { background-color: #e68900; border-color: #e68900;}
+.wallet-button { background-color: var(--success-color); color: var(--light-text); display: flex; align-items: center; border: 1px solid var(--success-color); }
+.wallet-button:hover { background-color: #3e8e41; border-color: #3e8e41;}
+.wallet-button i { margin-right: 6px; }
+#logout-btn { border-color: var(--danger-color); color: var(--danger-color); background-color: transparent;}
+#logout-btn:hover { background-color: rgba(244, 67, 54, 0.1); }
+
+/* --- General/Form Buttons --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+}
+.cta-button:hover { background-color: var(--primary-color); transform: translateY(-2px); }
+
+.form-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+.form-button.primary-button { background-color: var(--secondary-color); color: var(--light-text); }
+.form-button.primary-button:hover { background-color: var(--primary-color); }
+.form-button.success-button { background-color: var(--success-color); color: var(--light-text); }
+.form-button.success-button:hover { background-color: #3e8e41; }
+.form-button.danger-button { background-color: var(--danger-color); color: var(--light-text); }
+.form-button.danger-button:hover { background-color: #c4302b; }
+
+/* --- Resource/Challenge Links (Styled as buttons) --- */
+.resource-link.challenge-link {
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 5px 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    background-color: #fff;
+    color: var(--secondary-color);
+    transition: background-color 0.2s, color 0.2s; /* Added transition */
+}
+.resource-link.challenge-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    text-decoration: none;
+}
+.resource-link.challenge-link.completed {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+    opacity: 0.7;
+    cursor: default;
+    pointer-events: none;
+}
+.resource-link.challenge-link.completed:hover {
+     background-color: var(--success-color);
+     color: white;
+}
+
+/* --- Responsive Buttons --- */
+@media (max-width: 768px) {
+    .login-button, .signup-button, .wallet-button, #logout-btn {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+}

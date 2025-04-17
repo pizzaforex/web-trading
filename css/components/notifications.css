@@ -1,0 +1,32 @@
+#notification-area {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+.notification {
+    background-color: var(--success-color);
+    color: var(--light-text);
+    padding: 12px 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    min-width: 250px;
+    max-width: 350px;
+}
+.notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+.notification i { margin-right: 10px; font-size: 1.2rem; }
+.notification strong { margin: 0 4px; }
+.notification.error { background-color: var(--danger-color); }
+.notification.info { background-color: var(--secondary-color); }

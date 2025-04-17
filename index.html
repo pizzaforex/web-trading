@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Mindset Platform</title>
+    <!-- Collegamento al foglio di stile PRINCIPALE -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Collegamento a Font Awesome (per le icone) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Sfondo (opzionale, gestito da CSS) -->
+    <div class="parallax-bg" id="parallaxBg"></div>
+
+    <!-- Toolbar -->
+    <header class="toolbar">
+        <div class="toolbar-left">
+            <!-- Logo Immagine -->
+            <div class="toolbar-logo">
+                <img src="assets/logo.png" alt="Trading Mindset Logo">
+            </div>
+        </div>
+        <div class="login-tools">
+            <div class="token-balance" id="token-balance"><i class="fas fa-coins token-icon"></i> <span id="token-count">0</span> TRAD</div>
+            <button class="wallet-button" id="wallet-button"><i class="fas fa-wallet"></i> Wallet</button>
+            <button class="login-button" id="login-btn">Accedi</button>
+            <button class="signup-button" id="signup-btn">Registrati</button>
+            <div id="user-info" style="display: none;">
+                 <span id="username-display" style="margin-right: 15px;"></span>
+                 <button id="logout-btn" class="login-button" style="border-color: var(--danger-color); color: var(--danger-color);">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra di Navigazione -->
+    <nav id="main-nav">
+        <ul>
+            <li><a href="#" class="nav-link active" data-content-key="trading-zone">Trading in the Zone</a></li>
+            <li><a href="#" class="nav-link" data-content-key="placeholder-1">Analisi Tecnica (Placeholder)</a></li>
+            <li><a href="#" class="nav-link" data-content-key="placeholder-2">Gestione Rischio (Placeholder)</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenuto Principale -->
+    <main class="container" id="dynamic-content-area">
+        <!-- Content will be loaded here -->
+        <div class="loading-placeholder" style="text-align: center; padding: 5rem 0;">
+            <i class="fas fa-spinner fa-spin fa-3x" style="color: var(--secondary-color);"></i>
+            <p style="margin-top: 1rem; color: var(--grey-text);">Caricamento contenuti...</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Trading Mindset Academy. Ispirato da "Trading in the Zone" di Mark Douglas.</p>
+        <p>Disclaimer: Il trading comporta rischi significativi. Questo sito è solo a scopo didattico.</p>
+    </footer>
+
+    <!-- Modals HTML (Login, Signup, Wallet) -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal"> <div class="modal-content"> <span class="close-modal" data-modal-id="loginModal">&times;</span> <h2 class="modal-title">Accedi</h2> <form id="login-form"> <div class="form-group"> <label for="login-email">Email</label> <input type="email" id="login-email" required> </div> <div class="form-group"> <label for="login-password">Password</label> <input type="password" id="login-password" required> </div> <button type="submit" class="form-button primary-button">Accedi</button> <div class="form-footer"> Non hai un account? <a href="#" class="switch-modal" data-from="loginModal" data-to="signupModal">Registrati</a> </div> </form> </div> </div>
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal"> <div class="modal-content"> <span class="close-modal" data-modal-id="signupModal">&times;</span> <h2 class="modal-title">Registrati</h2> <form id="signup-form"> <div class="form-group"> <label for="signup-name">Nome</label> <input type="text" id="signup-name" required> </div> <div class="form-group"> <label for="signup-email">Email</label> <input type="email" id="signup-email" required> </div> <div class="form-group"> <label for="signup-password">Password</label> <input type="password" id="signup-password" required> </div> <div class="form-group"> <label for="signup-confirm">Conferma Password</label> <input type="password" id="signup-confirm" required> </div> <button type="submit" class="form-button primary-button">Crea Account</button> <div class="form-footer"> Hai già un account? <a href="#" class="switch-modal" data-from="signupModal" data-to="loginModal">Accedi</a> </div> </form> </div> </div>
+    <!-- Wallet Modal -->
+    <div id="walletModal" class="modal"> <div class="modal-content"> <span class="close-modal" data-modal-id="walletModal">&times;</span> <h2 class="modal-title">Il Tuo Wallet TRAD</h2> <div id="wallet-connected-content" style="display: none;"> <div class="token-amount"> <i class="fas fa-coins"></i> <span id="wallet-token-count">0</span> </div> <div class="token-name">TRAD Token</div> <div class="wallet-info"> <p><strong>Indirizzo Wallet Collegato:</strong></p> <div class="wallet-address" id="wallet-address"></div> </div> <div class="wallet-achievements"> <h3><i class="fas fa-trophy"></i> Achievements</h3> <div id="achievements-list"> <div class="no-achievements">Nessun achievement sbloccato.</div> </div> </div> <button id="disconnect-wallet-btn" class="form-button danger-button" style="margin-top: 20px;">Disconnetti Wallet</button> </div> <div id="wallet-connect-content"> <p class="modal-description">Collega il tuo wallet per guadagnare e conservare i token TRAD.</p> <i class="fas fa-wallet modal-icon icon-success"></i> <button id="connect-wallet-btn" class="form-button success-button">Collega Wallet</button> <p class="modal-info-text">I token TRAD sbloccano contenuti e strumenti avanzati.</p> </div> </div> </div>
+
+    <!-- Notification Area -->
+    <div id="notification-area">
+        <!-- Le notifiche verranno aggiunte qui dinamicamente -->
+    </div>
+
+    <!-- Collegamento al file JavaScript PRINCIPALE (ENTRY POINT) -->
+    <!-- !!! type="module" è FONDAMENTALE per usare import/export !!! -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
