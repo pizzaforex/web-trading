@@ -1,7 +1,7 @@
 // js/config/contentLibrary.js
 
 // Importa i contenuti specifici dai file separati
-import { tradingZoneContent } from './content/tradingZone.js';
+import { mentalitaTraderContent } from './content/mentalitaTrader.js';
 import { analisiTecnicaMurphyContent } from './content/analisiTecnicaMurphy.js';
 import { gestioneRischioContent } from './content/gestioneRischio.js';
 
@@ -9,7 +9,7 @@ import { gestioneRischioContent } from './content/gestioneRischio.js';
 // Le chiavi ('trading-zone', 'analisi-tecnica-murphy', ecc.)
 // sono quelle usate negli attributi data-content-key in index.html
 export const contentLibrary = {
-    'trading-zone': tradingZoneContent,
+    'mentalita-trader': mentalitaTraderContent,
     'analisi-tecnica-murphy': analisiTecnicaMurphyContent,
     'placeholder-2': gestioneRischioContent // Manteniamo placeholder-2 per ora, punta al contenuto di gestione rischio
     // Aggiungi qui altre chiavi e contenuti importati quando creeremo nuove pagine
