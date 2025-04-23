@@ -31,37 +31,36 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     line-height: 1.7;
     color: var(--dark-text);
-    background-color: var(--light-bg);
-    position: relative;
+    background-color: var(--light-bg); /* Colore di fallback se lo sfondo non carica */
+    position: relative; /* Necessario per il posizionamento di elementi assoluti/fissi e per z-index */
 }
 
-/* --- Sfondo Parallax (Opzionale) --- */
+/* --- Sfondo Parallax --- */
 .parallax-bg {
-    position: fixed;
+    position: fixed; /* Mantiene lo sfondo fisso */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 800"><g fill="none" stroke="%230a2e4d" stroke-width=".3"><path d="M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63"/><path d="M-31 229L237 261 390 382 731 737M520 660L309 538 295 764 40 599 309 538 390 382 102 382 40 599 -69 737 127 880"/><path d="M520 660L731 737 390 382 520 660 309 538 40 599 -69 737 520 660 295 764 390 382 309 538"/></g></svg>');
     background-size: cover;
-    z-index: -1;
-    opacity: 0.05;
-    background-attachment: fixed;
+    z-index: -1; /* Mette lo sfondo dietro tutto il resto */
+    opacity: 0.05; /* Rende il pattern molto leggero */
+    background-attachment: fixed; /* Effetto parallax base */
 }
 
 /* --- Layout Contenitore --- */
 .container {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centra il contenitore */
     padding: 1rem 2rem;
-    position: relative;
-    z-index: 1;
+    position: relative; /* Necessario per stare sopra lo sfondo con z-index */
+    z-index: 1; /* Assicura che il contenuto sia sopra .parallax-bg */
+    background-color: transparent; /* O var(--light-bg) se vuoi uno sfondo solido sopra il parallax */
 }
 
 /* --- Tipografia --- */
-h1, h2, h3 {
-    line-height: 1.3;
-}
+h1, h2, h3 { line-height: 1.3; }
 h1 { margin-bottom: 0.5rem; font-size: 2.8rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
 h2 { color: var(--primary-color); border-bottom: 3px solid var(--secondary-color); padding-bottom: 0.6rem; margin-top: 3rem; margin-bottom: 1.8rem; font-size: 2rem; display: flex; align-items: center; }
 h2:first-of-type { margin-top: 0; }
@@ -76,15 +75,8 @@ a:hover { color: var(--primary-color); text-decoration: underline; }
 code, .concept { background-color: #e9ecef; padding: 3px 7px; border-radius: 4px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; color: var(--secondary-color); font-size: 0.95em; }
 
 /* --- Loading Placeholder --- */
-.loading-placeholder {
-    text-align: center;
-    padding: 5rem 0;
-    color: var(--grey-text);
-}
-.loading-placeholder i {
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
+.loading-placeholder { text-align: center; padding: 5rem 0; color: var(--grey-text); }
+.loading-placeholder i { color: var(--secondary-color); margin-bottom: 1rem; }
 
 /* --- Icon Helpers --- */
 .icon-danger { color: var(--danger-color); }
@@ -92,14 +84,13 @@ code, .concept { background-color: #e9ecef; padding: 3px 7px; border-radius: 4px
 .icon-secondary { color: var(--secondary-color); }
 .icon-accent { color: var(--accent-color); }
 
-/* --- Responsive Base (Media query structure) --- */
+/* --- Responsive Base --- */
 @media (max-width: 768px) {
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.7rem; margin-top: 2.5rem;}
     h2 i { font-size: 1.5rem; }
     .container { padding: 1rem; }
 }
-
 @media (max-width: 480px) {
     h1 { font-size: 1.8rem; }
     h2 { font-size: 1.5rem; }

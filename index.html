@@ -18,7 +18,8 @@
         <div class="toolbar-left">
             <!-- Logo Immagine -->
             <div class="toolbar-logo">
-                <img src="assets/logo.png" alt="Trading Mindset Platform Logo"> <!-- Assicurati che il percorso sia corretto -->
+                <!-- Assicurati che il percorso 'assets/logo.png' sia corretto rispetto alla posizione di index.html -->
+                <img src="assets/logo.png" alt="Trading Mindset Platform Logo">
             </div>
         </div>
         <div class="login-tools">
@@ -36,6 +37,7 @@
     <!-- Barra di Navigazione -->
     <nav id="main-nav">
         <ul>
+            <!-- Link aggiornati con le chiavi corrette -->
             <li><a href="#" class="nav-link" data-content-key="mentalita-trader">Mentalità del Trader</a></li>
             <li><a href="#" class="nav-link" data-content-key="analisi-tecnica">Analisi Tecnica</a></li>
             <li><a href="#" class="nav-link" data-content-key="gestione-rischio">Gestione Rischio & MM</a></li>
@@ -45,7 +47,7 @@
 
     <!-- Contenuto Principale -->
     <main class="container" id="dynamic-content-area">
-        <!-- Content will be loaded here -->
+        <!-- Il contenuto verrà caricato qui da JavaScript -->
         <div class="loading-placeholder" style="text-align: center; padding: 5rem 0;">
             <i class="fas fa-spinner fa-spin fa-3x" style="color: var(--secondary-color);"></i>
             <p style="margin-top: 1rem; color: var(--grey-text);">Caricamento contenuti...</p>
@@ -142,6 +144,7 @@
     </div>
 
     <!-- Collegamento al file JavaScript PRINCIPALE (ENTRY POINT) -->
+    <!-- type="module" è fondamentale per usare import/export -->
     <script type="module" src="js/main.js"></script>
 </body>
 </html>
