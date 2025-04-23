@@ -2,53 +2,60 @@
 import { setupModalTriggers, openModal } from './ui/modalHandler.js';
 import { setupAuthListeners, loadAuthState, updateLoginStateUI } from './features/auth.js';
 import { setupWalletListeners, loadWalletState, updateWalletModalUI, updateTokenDisplayUI } from './features/wallet.js';
+// === MODIFICA QUI ===
+// Assicurati che l'import usi il nome corretto del file contentLibrary
+import { contentLibrary } from './config/contentLibrary.js';
 import { setupContentLoader, loadContent } from './features/contentLoader.js';
+// === FINE MODIFICA ===
+
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Initializing Trading Mindset Platform...");
 
-    // 1. Load State (Auth and Wallet/Achievements)
+    // 1. Load State
     const initialState = loadAuthState();
     const initialWalletState = loadWalletState();
     console.log("Initial State Loaded:", { initialState, initialWalletState });
 
     // 2. Setup UI Handlers
-    setupModalTriggers(); // Listeners for close/switch modals
+    setupModalTriggers();
 
     // 3. Setup Feature Listeners
-    setupAuthListeners();   // Listeners for login/signup forms, logout button
-    setupWalletListeners(); // Listeners for connect/disconnect wallet buttons
-    setupContentLoader(); // Listeners for main navigation and history API (popstate)
+    setupAuthListeners();
+    setupWalletListeners();
+    setupContentLoader(); // Gestisce nav click e popstate
 
-    // 4. Setup Global Triggers (Buttons in Toolbar opening modals)
+    // 4. Setup Global Triggers
     document.getElementById('login-btn')?.addEventListener('click', () => openModal('loginModal'));
     document.getElementById('signup-btn')?.addEventListener('click', () => openModal('signupModal'));
     document.getElementById('wallet-button')?.addEventListener('click', () => openModal('walletModal'));
 
-    // 5. Initial UI Update based on loaded state
+    // 5. Initial UI Update
     updateLoginStateUI();
-    updateWalletModalUI(); // Rende visibile/nascosto il contenuto connesso/disconnesso
-    updateTokenDisplayUI(); // Mostra/Nasconde il bilancio token
+    updateWalletModalUI();
+    updateTokenDisplayUI();
 
-    // 6. Load Initial Content
-    // Determina il contenuto iniziale da caricare (es. da hash URL o default)
-    let initialContentKey = 'trading-zone'; // Default
-    const hash = window.location.hash.substring(1);
-    if (hash && contentLibrary.hasOwnProperty(hash)) { // Verifica se l'hash è una chiave valida
-        initialContentKey = hash;
-    } else if (hash) {
-         console.warn(`Hash "${hash}" not found in content library, loading default.`);
-         // Opzionale: rimuovi hash non valido dall'URL senza ricaricare
-         // history.replaceState(null, '', window.location.pathname + window.location.search);
+    // === MODIFICA QUI: Logica Caricamento Iniziale ===
+    // 6. Load Initial Content - SEMPLIFICATO
+    const defaultContentKey = 'mentalita-trader'; // Definisci la pagina di default
+
+    // Determina la chiave da caricare: se c'è un hash valido usa quello, altrimenti usa il default.
+    let contentToLoadKey = defaultContentKey;
+    const currentHash = window.location.hash.substring(1);
+
+    if (currentHash && contentLibrary.hasOwnProperty(currentHash)) {
+        console.log(`Valid hash found (#${currentHash}), loading it.`);
+        contentToLoadKey = currentHash;
+    } else {
+        console.log(`No valid hash found or initial load, loading default: ${defaultContentKey}.`);
+        // Se l'URL ha un hash non valido o non ne ha, assicurati che l'URL rifletta la pagina di default
+        // Usiamo replaceState per non creare una nuova voce nella history per questo aggiustamento iniziale.
+        history.replaceState({ contentKey: defaultContentKey }, '', `#${defaultContentKey}`);
     }
 
-    // Aggiorna lo stato iniziale dell'history API per il contenuto di default/hash
-    // se non siamo arrivati qui tramite popstate
-    if (!window.history.state?.contentKey) {
-       history.replaceState({ contentKey: initialContentKey }, '', `#${initialContentKey}`);
-    }
-
-    loadContent(initialContentKey); // Carica il contenuto determinato
+    // Carica il contenuto determinato
+    loadContent(contentToLoadKey);
+    // === FINE MODIFICA ===
 
     console.log("Trading Mindset Platform Initialized (Modular).");
 });
