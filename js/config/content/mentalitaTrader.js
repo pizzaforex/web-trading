@@ -1,10 +1,10 @@
 // js/config/content/mentalitaTrader.js
 
-export const mentalitaTraderContent = { // Nome variabile cambiato
-    pageTitle: 'Mentalità del Trader - Padroneggia la Psicologia del Trading', // Titolo pagina cambiato
+export const mentalitaTraderContent = {
+    pageTitle: 'Mentalità del Trader - Padroneggia la Psicologia del Trading',
     sections: [
         {
-            id: 'introduzione-mentalita', // ID leggermente modificato per unicità
+            id: 'introduzione-mentalita',
             title: 'Introduzione: Il Dilemma del Trader',
             icon: 'fa-door-open',
             content: `
@@ -25,7 +25,7 @@ export const mentalitaTraderContent = { // Nome variabile cambiato
             ]
         },
         {
-            id: 'principi-mentalita', // ID leggermente modificato
+            id: 'principi-mentalita',
             title: 'Principi Chiave della Mentalità Vincente',
             icon: 'fa-key',
             content: `
@@ -40,7 +40,7 @@ export const mentalitaTraderContent = { // Nome variabile cambiato
                     <p>Il mercato si muove in probabilità, non in certezze. Nessun singolo trade ha un esito garantito, indipendentemente da quanto "buono" appaia il setup. Un <span class="concept">edge</span> (vantaggio statistico) si manifesta solo su una serie di operazioni, non su una singola. Pensare in probabilità significa concentrarsi sulla corretta applicazione del proprio edge nel lungo periodo, sapendo che ci saranno trade vincenti e perdenti, e che la distribuzione tra i due è statisticamente prevedibile ma individualmente casuale. Questo libera dalla pressione di "avere ragione" su ogni trade.</p>
                 </div>
                 <div class="card" style="margin-top: 2rem;">
-                    <h3><i class="fas fa-list-check icon-secondary"></i> 3. Le 5 Verità Fondamentali del Mercato</h3> <!-- Titolo leggermente modificato -->
+                    <h3><i class="fas fa-list-check icon-secondary"></i> 3. Le 5 Verità Fondamentali del Mercato</h3>
                     <p>Queste verità, se integrate come credenze profonde, creano un framework mentale che neutralizza le reazioni emotive disfunzionali:</p>
                     <ol class="principles-list" style="margin-top: 0;">
                          <li><strong>Tutto può succedere.</strong><div class="tooltip">?<span class="tooltiptext">Il mercato può fare qualsiasi cosa in qualsiasi momento; non esistono certezze assolute.</span></div></li>
@@ -53,16 +53,15 @@ export const mentalitaTraderContent = { // Nome variabile cambiato
                 </div>
             `,
              challenges: [
-                // ID cambiato per riflettere la nuova sezione
                 { id: 'truth-assimilation-mentalita', title: 'Sfida: Assimilazione Verità di Mercato', description: 'Scegli una delle 5 Verità Fondamentali e scrivi un breve paragrafo su come potresti applicarla concretamente nel tuo prossimo trade o nella tua analisi.', reward: 15, linkText: 'Invia Riflessione' }
             ]
         },
          {
-            id: 'fasi-sviluppo-trader', // ID modificato
+            id: 'fasi-sviluppo-trader',
             title: 'Le Fasi di Sviluppo del Trader',
             icon: 'fa-layer-group',
             content: `
-                <p>Diventare un trader costantemente profittevole è un processo evolutivo che può essere suddiviso in tre fasi principali. Comprendere queste fasi aiuta a gestire le aspettative e a concentrarsi sugli obiettivi giusti in ogni momento.</p> <!-- Rimosso riferimento a Douglas -->
+                <p>Diventare un trader costantemente profittevole è un processo evolutivo che può essere suddiviso in tre fasi principali. Comprendere queste fasi aiuta a gestire le aspettative e a concentrarsi sugli obiettivi giusti in ogni momento.</p>
                 <div class="flex-container">
                     <div class="flex-item card">
                         <h4><i class="fas fa-cogs"></i> 1. Fase Meccanica</h4>
@@ -81,11 +80,11 @@ export const mentalitaTraderContent = { // Nome variabile cambiato
              challenges: []
         },
         {
-            id: 'framework-consistenza', // ID modificato
+            id: 'framework-consistenza',
             title: 'Il Framework per la Consistenza: Operare come un Casinò',
             icon: 'fa-tools',
             content: `
-                <p>Questa sezione descrive un esercizio pratico fondamentale per passare dalla teoria alla pratica e costruire la mentalità corretta. È il cuore della <span class="concept">Fase Meccanica</span>.</p> <!-- Rimosso riferimento a Douglas -->
+                <p>Questa sezione descrive un esercizio pratico fondamentale per passare dalla teoria alla pratica e costruire la mentalità corretta. È il cuore della <span class="concept">Fase Meccanica</span>.</p>
                 <h3>L'Esercizio Base:</h3>
                 <ol>
                     <li><strong>Scegli un Edge:</strong> Identifica un sistema di trading con regole di entrata <span class="concept">oggettive e precise</span>. Non deve essere perfetto, ma deve avere una logica e, idealmente, un backtest positivo (l'enfasi qui è più sull'esecuzione che sulla perfezione del sistema in questa fase).</li>
@@ -114,8 +113,8 @@ export const mentalitaTraderContent = { // Nome variabile cambiato
             ]
         },
          {
-            id: 'risorse-mentalita', // ID modificato
-            title: 'Risorse e Prossimi Passi per la Mentalità', // Titolo modificato
+            id: 'risorse-mentalita',
+            title: 'Risorse e Prossimi Passi per la Mentalità',
             icon: 'fa-graduation-cap',
             content: `
                 <p>Padroneggiare la mentalità del trading è un viaggio continuo di auto-scoperta e pratica deliberata. Le idee presentate qui sono solo l'inizio.</p>
@@ -125,7 +124,6 @@ export const mentalitaTraderContent = { // Nome variabile cambiato
                         <li>Approfondire testi sulla <span class="concept">psicologia del trading</span> e sulla <span class="concept">disciplina</span> è fondamentale. Cerca autori riconosciuti nel campo della performance mentale applicata ai mercati.</li>
                         <li>Libri sulle <span class="concept">biografie</span> di trader di successo possono offrire spunti preziosi sulla loro mentalità e approccio.</li>
                         <li>Testi sulla <span class="concept">gestione emotiva</span> e sui <span class="concept">bias cognitivi</span> (come quelli di D. Kahneman) sono utili per comprendere meglio sé stessi.</li>
-                        <!-- Rimosso riferimento diretto ai libri di Douglas -->
                     </ul>
                     <h4><i class="fas fa-link"></i> Strumenti Utili</h4>
                     <ul>
@@ -142,7 +140,6 @@ export const mentalitaTraderContent = { // Nome variabile cambiato
                      <div class="token-reward"><i class="fas fa-coins"></i> 30 TRAD</div>
                      <h4><i class="fas fa-journal-whills"></i> Sfida: Diario Psicologico</h4>
                      <p>Tieni un diario psicologico dettagliato per almeno una settimana di trading. Annota pensieri, emozioni e decisioni per ogni trade.</p>
-                     <!-- ID cambiato per riflettere la nuova sezione -->
                      <a href="#" class="resource-link challenge-link" data-challenge-id="psych-journal-mentalita" data-reward="30">Scarica Template Diario</a>
                  </div>
                 <p style="margin-top: 2rem; text-align: center;">Ricorda: la consistenza non si trova nel mercato, ma dentro di te.</p>
